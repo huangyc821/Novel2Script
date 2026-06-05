@@ -2,21 +2,29 @@
 
 AI-assisted Novel to Script Generator
 
-## Project Introduction
+## Overview
 
-Novel2Script is a lightweight AI application that converts novel text into structured screenplay format.
+Novel2Script is a lightweight AI-assisted system that converts novel-style text into structured screenplay formats.
 
-The project aims to explore:
+The project explores:
 
 - Natural Language Processing
-- Script Structure Generation
-- YAML-based Data Representation
-- AI-assisted Content Creation
+- Script Generation
+- YAML Structured Output
+- AI Content Transformation
+
+## Features
+
+- Novel text input
+- Character extraction
+- Scene generation
+- YAML script output
+- FastAPI backend API
 
 ## Project Structure
 
 backend/
-- FastAPI service
+- FastAPI backend service
 
 frontend/
 - Future web interface
@@ -25,19 +33,19 @@ docs/
 - System design documents
 
 examples/
-- Sample inputs and outputs
+- Sample input and output files
 
-## Example Workflow
-
-Input:
+## Example Input
 
 A girl walks into a coffee shop and orders a latte.
 
-Output:
+## Example Output
 
 scene: Coffee Shop
+
 characters:
   - Girl
+
 actions:
   - Enter coffee shop
   - Order latte
@@ -49,8 +57,17 @@ actions:
 - YAML
 - GitHub
 
+## Future Work
+
+- LLM integration
+- Character relationship analysis
+- Visual storyboard generation
+- Script quality evaluation
+
 ## Author
 
-Yuchan Huang
+Huang Yuchan
+
 Henan Normal University
+
 Software Engineering
