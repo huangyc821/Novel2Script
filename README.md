@@ -84,3 +84,10 @@ Huang Yuchan
 Henan Normal University
 
 Software Engineering
+
+## Roadmap
+
+- [ ] OpenAI API Integration
+- [ ] Character Relationship Analysis
+- [ ] Storyboard Generation
+- [ ] Script Quality Evaluation
