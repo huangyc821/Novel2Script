@@ -1,0 +1,19 @@
+title: 示例剧本
+
+characters:
+  - 张三
+  - 李四
+
+scenes:
+  - scene_id: 1
+
+    location: 咖啡馆
+
+    time: 白天
+
+    dialogues:
+      - speaker: 李四
+        content: 你终于来了
+
+      - speaker: 张三
+        content: 出事了
