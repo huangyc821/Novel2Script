@@ -1,6 +1,8 @@
 # Novel2Script
 
-AI-assisted Novel to Script Generator
+An AI-assisted system for converting narrative novel text into structured screenplay scripts.
+
+This project explores how Large Language Models (LLMs) can automatically extract characters, scenes, actions, and dialogues from literary text and transform them into screenplay-style representations.
 
 ## Overview
 
@@ -49,6 +51,17 @@ characters:
 actions:
   - Enter coffee shop
   - Order latte
+## System Architecture
+
+Novel Text
+    ↓
+Text Analysis
+    ↓
+Character Extraction
+    ↓
+Scene Generation
+    ↓
+YAML Structured Output
 
 ## Technology Stack
 
