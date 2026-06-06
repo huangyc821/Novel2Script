@@ -1,45 +1,48 @@
-import yaml
+# main.py
 
-script = {
-    "title": "校园风云",
+from novel_parser import parse_novel
+from character_extractor import extract_characters
+from script_generator import generate_scenes
+from yaml_exporter import export_yaml
 
-    "characters": [
-        "张三",
-        "李四"
-    ],
+INPUT_FILE = "../examples/sample_novel.txt"
+OUTPUT_FILE = "../examples/sample_output.yaml"
 
-    "scenes": [
-        {
-            "scene_id": 1,
-            "location": "教室",
-            "time": "上午",
 
-            "summary": "张三来到教室上课。",
+def main():
 
-            "dialogues": [
-                {
-                    "speaker": "张三",
-                    "content": "大家好。"
-                },
-                {
-                    "speaker": "李四",
-                    "content": "比赛准备得怎么样？"
-                }
-            ]
-        }
-    ]
-}
+    with open(
+        INPUT_FILE,
+        "r",
+        encoding="utf-8"
+    ) as f:
 
-with open(
-    "../examples/sample_output.yaml",
-    "w",
-    encoding="utf-8"
-) as f:
-    yaml.dump(
-        script,
-        f,
-        allow_unicode=True,
-        sort_keys=False
+        novel_text = f.read()
+
+    chapters = parse_novel(novel_text)
+
+    characters = extract_characters(novel_text)
+
+    scenes = generate_scenes(
+        chapters,
+        characters
     )
 
-print("剧本生成成功")
+    script = {
+        "title": "Novel2Script Output",
+        "characters": characters,
+        "scenes": scenes
+    }
+
+    export_yaml(
+        script,
+        OUTPUT_FILE
+    )
+
+    print("生成成功")
+    print(f"章节数: {len(chapters)}")
+    print(f"角色数: {len(characters)}")
+
+
+if __name__ == "__main__":
+    main()
