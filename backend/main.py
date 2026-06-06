@@ -1,22 +1,45 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
+import yaml
 
-app = FastAPI(title="Novel2Script API")
+script = {
+    "title": "校园风云",
 
+    "characters": [
+        "张三",
+        "李四"
+    ],
 
-class NovelRequest(BaseModel):
-    text: str
+    "scenes": [
+        {
+            "scene_id": 1,
+            "location": "教室",
+            "time": "上午",
 
+            "summary": "张三来到教室上课。",
 
-@app.get("/")
-def root():
-    return {"message": "Novel2Script API is running"}
+            "dialogues": [
+                {
+                    "speaker": "张三",
+                    "content": "大家好。"
+                },
+                {
+                    "speaker": "李四",
+                    "content": "比赛准备得怎么样？"
+                }
+            ]
+        }
+    ]
+}
 
+with open(
+    "../examples/sample_output.yaml",
+    "w",
+    encoding="utf-8"
+) as f:
+    yaml.dump(
+        script,
+        f,
+        allow_unicode=True,
+        sort_keys=False
+    )
 
-@app.post("/generate")
-def generate_script(request: NovelRequest):
-    return {
-        "title": "Generated Script",
-        "input_length": len(request.text),
-        "status": "success"
-    }
+print("剧本生成成功")
